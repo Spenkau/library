@@ -10,6 +10,10 @@ function App() {
           <div className="headerInfo">
             <h3>Book store</h3>
             <p>Reading is the best teaching</p>
+            <p>Reading is the best teaching</p>
+            <p>Reading is the best teaching</p>
+            <p>Reading is the best teaching</p>
+            <p>Reading is the best teaching</p>
           </div>
         </div>
         <ul className="headerRight">
