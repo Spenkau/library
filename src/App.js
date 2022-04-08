@@ -6,42 +6,60 @@ function App() {
     <div className="wrapper">
       <div className="overlay">
         <div className="drawerBlock">
-          <h2>Cart</h2>
-
+          <h2>Cart <img width={35} height={35} className="removeBtn" src="/images/btn-x.svg"/></h2>
           
-
-          <div className="cartItem">
-            <img src="images/book3.png" alt="Book" />
-            <div className="descriptionBlock">
-              <p>Карточка активации учебной программы "Правила дорожного движения"</p>
-              <b>120 rub</b>
+          <div className="items">
+            <div className="cartItem">
+              <img src="images/book3.png" alt="Book" />
+              <div className="descriptionBlock">
+                <p>Карточка активации учебной программы "Правила дорожного движения"</p>
+                <b>120 rub</b>
+                <img width={25} height={25} className="removeBtn" src="/images/btn-remove.svg"/>
+              </div>
             </div>
-            <img className="removeBtn" src="/images/btn-remove.svg"/>
-          </div>
-          <div className="cartItem">
-            <img src="images/book3.png" alt="Book" />
-            <div className="descriptionBlock">
-              <p>Карточка активации учебной программы "Правила дорожного движения"</p>
-              <b>120 rub</b>
+            <div className="cartItem">
+              <img src="images/book3.png" alt="Book" />
+              <div className="descriptionBlock">
+                <p>Карточка активации учебной программы "Правила дорожного движения"</p>
+                <b>120 rub</b>
+                <img width={25} height={25} className="removeBtn" src="/images/btn-remove.svg"/>
+              </div>
             </div>
-            <img className="removeBtn" src="/images/btn-remove.svg"/>
+            <div className="cartItem">
+              <img src="images/book3.png" alt="Book" />
+              <div className="descriptionBlock">
+                <p>Карточка активации учебной программы "Правила дорожного движения"</p>
+                <b>120 rub</b>
+                <img width={25} height={25} className="removeBtn" src="/images/btn-remove.svg"/>
+              </div>
+            </div>
+            <div className="cartItem">
+              <img src="images/book3.png" alt="Book" />
+              <div className="descriptionBlock">
+                <p>Карточка активации учебной программы "Правила дорожного движения"</p>
+                <b>120 rub</b>
+                <img width={25} height={25} className="removeBtn" src="/images/btn-remove.svg"/>
+              </div>
+            </div>
           </div>
-            <ul className="cartTotalBlock">
-              <table className="priceCount" cellPadding={4}>
-                <tbody>
-                  <tr>
-                    <td>Итого:</td>
-                    <th>256 rub</th>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Налог%:</td>
-                    <th>16 rub</th>
-                  </tr>
-                </tbody>
-              </table>
-            </ul>
+         
+          <div className="cartTotalBlock">
+            <table className="priceCount" cellPadding={4}>
+              <tbody>
+                <tr>
+                  <td>Total:</td>
+                  <th>256 rub</th>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Tax %:</td>
+                  <th>16 rub</th>
+                </tr>
+              </tbody>
+            </table>
+            <button>Checkout</button>
+          </div>
         </div>
       </div>
 

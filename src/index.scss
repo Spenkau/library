@@ -8,7 +8,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #e7f6ff;
-    min-width: 1000px;
 }
 
 .wrapper {
@@ -200,35 +199,65 @@ header {
     position: absolute;
     width: 385px;
     height: 100%;
-    right: 0;
+    left: 0;
     background: #ffffff;
     box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
     padding: 30px;
 
     h2 {
+        display: flex;
+        justify-content: space-between;
         margin: 0;
         margin-bottom: 30px;
+        img {
+            cursor: pointer;
+        }
+    }
+}
+
+.items {
+    padding-left: 5px;
+    margin-left: -20px;
+    margin-bottom: 20px;
+    width: 430px;
+    height: 645px;
+    overflow: auto;
+}
+
+.descriptionBlock {
+    display: flex;
+    flex-direction: column;
+    img {
+        margin-top: 60px;
+        margin-left: 0px;
+
     }
 }
 
 .cartTotalBlock {
     .priceCount {
-        
-        div {
-            display: flex;
-            flex: 1;
-            height: 1px;
-            border: 1px dashed #dfdfdf;
-            flex-direction:row;
-            justify-content: space-between;
-            list-style-type: none;
-
-        }
-        .countResult {
-            display: flex;
-        }
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    button {
+        display: block;
+        position: absolute;
+        right: 12px;
+        bottom: 70px;
+        width:95%;
+        height: 55px;
+        border-radius: 18px;
+        border: 0;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        background: #9dd558;
+        cursor: pointer;
     }
 }
+
+
 
 .cartItem {
     position:relative;
@@ -239,15 +268,8 @@ header {
     border-radius: 20px;
     overflow: hidden;
     margin-bottom: 30px;
+    overflow-x: visible;
 
-    .cartItemImg {
-        height:110px;
-        width: 110px;
-        background-size: contain;
-        background-position: 0 -7px;
-        background-repeat: no-repeat;
-        margin-right: 20px;
-    }
     
     p {
         font-size: 14px;
@@ -265,7 +287,7 @@ header {
     }
 
     .removeBtn {
-        opacity: 0.5;
+        opacity: 0.6;
         cursor: pointer;
         transition: opacity 0.15s ease-in-out;
 
