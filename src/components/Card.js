@@ -1,18 +1,23 @@
 import React from "react";
 
-function Card() {
+function Card(props) {
+
+  const onClickButton = () => {
+    alert("Добавлено в корзину")
+  }
+
   return (
     <div className="card">
-      <img src="/images/book3.png" width="150" height="auto" alt="" />
+      <img src={props.imageUrl} width="150" height="auto" alt="" />
       <h5>
-        Карточка активации учебной программы "Правила дорожного движения""
+        {props.title}
       </h5>
       <div className="cardAdd">
         <div className="cardPrice">
           <span>Price: </span>
-          <b>120 rub.</b>
+          <b>{props.price}</b>
         </div>
-        <button className="button">
+        <button className="button" onClick={onClickButton}>
           <img width={11} height={11} src="/images/add.svg" alt="Add to cart" />
         </button>
         <div className="favorite">
