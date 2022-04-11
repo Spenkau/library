@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Cart() {
+function Cart(props) {
+
     return (
+      <div className="overlay">
         <div className="drawerBlock">
-          <h2>Cart <img width={35} height={35} className="removeBtn" src="/images/btn-x.svg"/></h2>
+          <h2>Cart <img onClick={props.onHide} width={35} height={35} className="removeBtn" src="/images/btn-x.svg" alt="Close cart"/></h2>
           
           <div className="items">
             
@@ -27,6 +29,7 @@ function Cart() {
             <button>Checkout</button>
           </div>
         </div>
+      </div>
     );
 }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import Card from "./components/Card";
 import CartItem from "./components/CartItem";
@@ -24,14 +24,15 @@ const books = [
 ];
 
 function App() {
+  const [isCartOpened, setIsCartOpened] = useState(false);
+
+
   return (
     <div className="wrapper">
-      <div style={{ display: "none" }} className="overlay">
-        <Cart />
-      </div>
-      <Header />
-
+      {isCartOpened ? <Cart onHide={() => setIsCartOpened(false)} /> : null}
+      <Header onClickCart={() => setIsCartOpened(true)} />
       <hr />
+      <h1></h1>
       <div className="content">
         <div className="middleHeader">
           <h1>All books</h1>
@@ -42,7 +43,13 @@ function App() {
         </div>
         <div className="books">
           {books.map((obj) => (
-            <Card title={obj.name} price={obj.price} imageUrl={obj.imageUrl} />
+            <Card
+              title={obj.name}
+              price={obj.price}
+              imageUrl={obj.imageUrl}
+              onPlus={() => console.log("Плюс нажат")}
+              onFavorite={() => console.log("В избранное нажата")}
+            />
           ))}
         </div>
       </div>

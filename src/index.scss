@@ -1,7 +1,7 @@
 * {
     font-family:'Comfortaa', system-ui;
     b {
-        font-weight: 900;
+        font-weight: 500;
     }
 }
 
@@ -77,6 +77,7 @@ header {
         padding-right:20px;
 
         .headerPrice {
+            cursor: pointer;
             img {
                 padding-right: 10px;
             }
@@ -112,6 +113,10 @@ header {
     margin-right: 28px;
     transition: box-shadow 0.2s ease-in-out, transform 0.2 ease-in-out;
     overflow: hidden;
+
+    .plus {
+        cursor: pointer;
+    }
  
     &:hover {
         box-shadow: 0px 14px 30px rgba(0,0,0,0.08);
@@ -188,35 +193,67 @@ header {
 
 .overlay {
     position: absolute;
-    left:0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.1);
-    z-index: 1;
-}
-
-.drawerBlock {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: 385px;
-    height: 100%;
     left: 0;
-    background: #ffffff;
-    box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 1;
 
-    h2 {
+    .drawerBlock {
         display: flex;
-        justify-content: space-between;
-        margin: 0;
-        margin-bottom: 30px;
-        img {
-            cursor: pointer;
+        flex-direction: column;
+        position: absolute;
+        width: 385px;
+        height: 93%;
+        left: 0;
+        background: #ffffff;
+        box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    
+        h2 {
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            margin-bottom: 30px;
+            img {
+                cursor: pointer;
+            }
         }
+        .descriptionBlock {
+            display: flex;
+            flex-direction: column;
+            img {
+                margin-top: 60px;
+                margin-left: 0px;
+        
+            }
+        }
+        
+        .cartTotalBlock {
+            .priceCount {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+            button {
+                display: block;
+                width:95%;
+                height: 55px;
+                border-radius: 18px;
+                border: 0;
+                color: #fff;
+                font-size: 16px;
+                font-weight: 600;
+                background: #9dd558;
+                cursor: pointer;
+            }
+        }
+        
     }
+    
 }
+
 
 .items {
     padding-left: 5px;
@@ -227,38 +264,6 @@ header {
     overflow: auto;
 }
 
-.descriptionBlock {
-    display: flex;
-    flex-direction: column;
-    img {
-        margin-top: 60px;
-        margin-left: 0px;
-
-    }
-}
-
-.cartTotalBlock {
-    .priceCount {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 20px;
-    }
-    button {
-        display: block;
-        position: absolute;
-        right: 12px;
-        bottom: 70px;
-        width:95%;
-        height: 55px;
-        border-radius: 18px;
-        border: 0;
-        color: #fff;
-        font-size: 16px;
-        font-weight: 600;
-        background: #9dd558;
-        cursor: pointer;
-    }
-}
 
 
 
