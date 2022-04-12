@@ -10,15 +10,32 @@ body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #e7f6ff;
+    background-color: #e9ffe7;
 }
+
+::-webkit-scrollbar {
+    width: 15px; /* ширина для вертикального скролла */
+    background-color: #e9ffe7;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #e9ffe7;
+    border-radius: 9em;
+    box-shadow: inset 1px 1px 10px #f3faf7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #253861;
+}
+
+
+
 
 .wrapper {
     .mb-40 {
         margin-bottom: 40px;
     }
     hr {
-        width: 1170px;
+        width: 1870px;
         height: 1px;
         background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
         background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
@@ -31,7 +48,9 @@ body {
     background: #ffffff;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
     border-radius: 20px;
-    max-width: 1200px;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
     margin: 50px auto;
     padding-left: 20px;
     padding-bottom: 20px;
@@ -94,6 +113,8 @@ header {
     .books {
         display: flex;
         flex-wrap: wrap;
+        margin-left: 20%;
+        max-width: 880px;
     }
     h1 {
         margin: 0;
@@ -113,6 +134,7 @@ header {
     margin-right: 28px;
     transition: box-shadow 0.2s ease-in-out, transform 0.2 ease-in-out;
     overflow: hidden;
+    
 
     .plus {
         cursor: pointer;
