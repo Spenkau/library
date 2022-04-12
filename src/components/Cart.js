@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 
 function Cart(props) {
+  
 
     return (
-      <div className="overlay">
+      <div className="overlay" >
         <div className="drawerBlock">
           <h2>Cart <img onClick={props.onHide} width={35} height={35} className="removeBtn" src="/images/btn-x.svg" alt="Close cart"/></h2>
           
           <div className="items">
-            
+           
           </div>
          
           <div className="cartTotalBlock">
