@@ -1,35 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.scss";
 import Card from "./components/Card";
-import CartItem from "./components/CartItem";
 import Header from "./components/Header";
 import Cart from "./components/Cart";
 
-const books = [
-  {
-    name: "Справочник правил дорожного движения",
-    price: 19.99,
-    imageUrl: "./images/book3.png",
-  },
-  {
-    name: 'Александр Пушкин "Капитанская дочка"',
-    price: 21,
-    imageUrl: "./images/book1.png",
-  },
-  {
-    name: 'Александр Блок "Сборник стихов"',
-    price: 15.99,
-    imageUrl: "./images/book2.png",
-  },
-];
 
 function App() {
+  const [items, setItems] = useState([]);
+  const [cartItems, setCartItems] = useState([])
   const [isCartOpened, setIsCartOpened] = useState(false);
 
+  useEffect(() => {
+    fetch('https://6257c564e4e0b7314280074d.mockapi.io/items')
+      .then((res) => {
+        return res.json();
+      }) 
+      .then ((json) => {
+        setItems(json);
+      });
+  }, []);
 
+  const onAddToCart = (obj) => {
+    setCartItems([...cartItems, obj])
+  }
+  console.log(cartItems)
   return (
     <div className="wrapper">
-      {isCartOpened ? <Cart onHide={() => setIsCartOpened(false)} /> : null}
+      {isCartOpened && <Cart items={cartItems} onHide={() => setIsCartOpened(false)} />}
       <Header onClickCart={() => setIsCartOpened(true)} />
       <hr />
       <h1></h1>
@@ -42,12 +39,12 @@ function App() {
           </div>
         </div>
         <div className="books">
-          {books.map((obj) => (
+          {items.map((item) => (
             <Card
-              title={obj.name}
-              price={obj.price}
-              imageUrl={obj.imageUrl}
-              onPlus={() => console.log("Плюс нажат")}
+              title={item.name}
+              price={item.price}
+              imageUrl={item.imageUrl}
+              onPlus={onAddToCart}
               onFavorite={() => console.log("В избранное нажата")}
             />
           ))}
