@@ -214,20 +214,19 @@ header {
 }
 
 .overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0,0,0,.5);
     z-index: 1;
 
     .drawerBlock {
         display: flex;
         flex-direction: column;
-        position: absolute;
-        width: 385px;
-        height: 93%;
+        position: fixed;
+        width: 390px;
+        height: 100vh;
         left: 0;
         background: #ffffff;
         box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
@@ -277,52 +276,62 @@ header {
 }
 
 
-.items {
+.itemses {
     padding-left: 5px;
     margin-left: -20px;
     margin-bottom: 20px;
     width: 430px;
     height: 645px;
     overflow: auto;
-}
 
 
+    .cartItem {
+        display: flex;
+        align-content: center;
+        margin-top: 15px;
+        border: 1px solid #f3f3f3;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        overflow-x: visible;
+
+        .cartItemImg {
+            height: 150px;
+            width: 100px;
+            margin-right: 20px;
+        }
+
+        
+        p:first-child {
+            font-size: 14px;
+            margin-top:20px;
+            margin-bottom: 0px;
+            padding-right:8px;
+        }
+        
+        strong {
+            font-size: 16px;
+            margin-top:10px;
+            margin-bottom: 0px;
+        }
+        img:first-child {
+            padding-right: 10px;
+            margin-right:10px;
+        }
+
+        .removeBtn {
+            position: relative;
+            top: 120px;
+            right: 50px;
+            display: block;
+            opacity: 0.6;
+            cursor: pointer;
+            transition: opacity 0.15s ease-in-out;
 
 
-.cartItem {
-    position:relative;
-    display: flex;
-    align-content: center;
-    margin-top: 15px;
-    border: 1px solid #f3f3f3;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 30px;
-    overflow-x: visible;
-
-    
-    p {
-        font-size: 14px;
-        margin-top:4px;
-        margin-bottom: 10px;
-        padding-right:8px;
-    }
-    
-    b {
-        font-size: 16px;
-    }
-    img:first-child {
-        padding-right: 10px;
-        margin-right:10px;
-    }
-
-    .removeBtn {
-        opacity: 0.6;
-        cursor: pointer;
-        transition: opacity 0.15s ease-in-out;
-
-        &:hover {
-            opacity: 1;
+            &:hover {
+                opacity: 1;
+            }
         }
     }
 }

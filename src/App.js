@@ -21,15 +21,14 @@ function App() {
   }, []);
 
   const onAddToCart = (obj) => {
-    setCartItems([...cartItems, obj])
+    setCartItems(prev => [...prev, obj])
   }
-  console.log(cartItems)
+
   return (
     <div className="wrapper">
-      {isCartOpened && <Cart items={cartItems} onHide={() => setIsCartOpened(false)} />}
+      {isCartOpened && <Cart items={cartItems} onClose={() => setIsCartOpened(false)} />}
       <Header onClickCart={() => setIsCartOpened(true)} />
       <hr />
-      <h1></h1>
       <div className="content">
         <div className="middleHeader">
           <h1>All books</h1>

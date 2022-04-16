@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Cart({ onHide, items = [] }) {
+function Cart({ onClose, items = [] }) {
   return (
     <div className="overlay">
       <div className="drawerBlock">
         <h2>
           Cart
           <img
-            onClick={onHide}
+          onClick={onClose}
             width={35}
             height={35}
             className="removeBtn"
@@ -16,22 +16,23 @@ function Cart({ onHide, items = [] }) {
           />
         </h2>
 
-        <div className="items">
-          {items.map((obj) => {
+        <div className="itemses">
+          {items.map((obj) => (
             <div className="cartItem">
-              <img src={obj.imageUrl} alt="Book" />
+              <img src={obj.imageUrl}className="cartItemImg" alt="Book" />
               <div className="descriptionBlock">
                 <p>{obj.title}</p>
-                <b>{obj.price} rub</b>
-                <img
-                  width={25}
-                  height={25}
+                <strong>{obj.price} RUB</strong>
+              </div>
+              <img
+                  width={30}
+                  height={30}
                   className="removeBtn"
                   src="/images/btn-remove.svg"
+                  alt="Your books"
                 />
-              </div>
-            </div>;
-          })}
+            </div>
+          ))}
         </div>
 
         <div className="cartTotalBlock">
