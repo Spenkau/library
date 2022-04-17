@@ -54,6 +54,67 @@ body {
     margin: 50px auto;
     padding-left: 20px;
     padding-bottom: 20px;
+
+    .itemses {
+        padding-left: 5px;
+        margin-left: -20px;
+        margin-bottom: 20px;
+        width: 430px;
+        height: 645px;
+        overflow: auto;
+    
+    
+        .cartItem {
+            display: flex;
+            align-content: center;
+            margin-top: 15px;
+            border: 1px solid #f3f3f3;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            overflow-x: visible;
+    
+            .cartItemImg {
+                height: 150px;
+                width: 100px;
+                margin-right: 20px;
+            }
+    
+            
+            p:first-child {
+                font-size: 14px;
+                margin-top:20px;
+                margin-bottom: 0px;
+                padding-right:8px;
+            }
+            
+            strong {
+                font-size: 16px;
+                margin-top:10px;
+                margin-bottom: 0px;
+            }
+            img:first-child {
+                padding-right: 10px;
+                margin-right:10px;
+            }
+    
+            .removeBtn {
+                position: relative;
+                top: 120px;
+                right: 50px;
+                display: block;
+                opacity: 0.6;
+                cursor: pointer;
+                transition: opacity 0.15s ease-in-out;
+    
+    
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    
 }
 
 header {
@@ -148,6 +209,10 @@ header {
     .favorite {
         position:relative;
         cursor: pointer;
+        img {
+            margin: 0;
+            padding: 0;
+        }
     }
 
    span {
@@ -196,6 +261,23 @@ header {
         border-radius: 10px;
         padding: 0 15px;
         padding-top: 40px;
+        position: relative;
+
+        .clearSearch {
+            position: absolute;
+            right: 0;
+            width: 18px;
+            height: 18px;
+            top: 52px;
+            right: 27px;
+            opacity: 0.6;
+            cursor: pointer;
+            transition: opacity 0.15s ease-in-out;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
 
         img {
             margin-bottom: -4px;
@@ -228,6 +310,8 @@ header {
         width: 390px;
         height: 100vh;
         left: 0;
+        bottom: 0;
+        top: 0;
         background: #ffffff;
         box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
         padding: 30px;
@@ -252,11 +336,34 @@ header {
         }
         
         .cartTotalBlock {
+            position: fixed;
+            top: 750px;
+            width: 400px;
             .priceCount {
                 display: flex;
                 flex-direction: column;
                 margin-bottom: 20px;
             }
+            button {
+                display: block;
+                width:95%;
+                height: 55px;
+                border-radius: 18px;
+                border: 0;
+                color: #fff;
+                font-size: 16px;
+                font-weight: 600;
+                background: #9dd558;
+                cursor: pointer;
+            }
+        }
+
+        .emptyCart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
             button {
                 display: block;
                 width:95%;
@@ -276,62 +383,3 @@ header {
 }
 
 
-.itemses {
-    padding-left: 5px;
-    margin-left: -20px;
-    margin-bottom: 20px;
-    width: 430px;
-    height: 645px;
-    overflow: auto;
-
-
-    .cartItem {
-        display: flex;
-        align-content: center;
-        margin-top: 15px;
-        border: 1px solid #f3f3f3;
-        border-radius: 10px;
-        overflow: hidden;
-        margin-bottom: 30px;
-        overflow-x: visible;
-
-        .cartItemImg {
-            height: 150px;
-            width: 100px;
-            margin-right: 20px;
-        }
-
-        
-        p:first-child {
-            font-size: 14px;
-            margin-top:20px;
-            margin-bottom: 0px;
-            padding-right:8px;
-        }
-        
-        strong {
-            font-size: 16px;
-            margin-top:10px;
-            margin-bottom: 0px;
-        }
-        img:first-child {
-            padding-right: 10px;
-            margin-right:10px;
-        }
-
-        .removeBtn {
-            position: relative;
-            top: 120px;
-            right: 50px;
-            display: block;
-            opacity: 0.6;
-            cursor: pointer;
-            transition: opacity 0.15s ease-in-out;
-
-
-            &:hover {
-                opacity: 1;
-            }
-        }
-    }
-}

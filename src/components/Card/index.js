@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 
 
-function Card({ title, imageUrl, price, onPlus, onFavorite }) {
+function Card({ title, imageUrl, price, onPlus }) {
   const [isAdded, setIsAdded] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const onClickPlus = () => {
     onPlus({title, price, imageUrl});
     setIsAdded(!isAdded);
+  }
+
+  const onClickFavorite = () => {
+    setIsFavorite(!isFavorite)
   }
 
   return (
@@ -26,11 +31,10 @@ function Card({ title, imageUrl, price, onPlus, onFavorite }) {
           src={isAdded ? "/images/btn-checked.svg" : "/images/add.svg"}
           alt="Add to cart"
         />
-        <div className="favorite" onClick={onFavorite}>
+        <div className="favorite" onClick={onClickFavorite}>
           <img
-            height={25}
-            width={25}
-            src="/images/heart.svg"
+
+            src={isFavorite ? "/images/like.png" : "/images/unliked.png"}
             alt="Add to favorite"
           />
         </div>
