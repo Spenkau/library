@@ -57,7 +57,12 @@ function Cart({ onClose, onRemove, items = [] }) {
           </div>
         ) : (
           <div className="emptyCart">
-            <img width={120} height={120} src="/images/sad_smile.svg" alt="No books" />
+            <img
+              width={120}
+              height={120}
+              src="/images/sad_smile.svg"
+              alt="No books"
+            />
             <p>Ваша корзина пуста</p>
             <button onClick={onClose}>Вернуться в магазин</button>
           </div>

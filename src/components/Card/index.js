@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 
-
-function Card({ title, imageUrl, price, onPlus }) {
+function Card({ title, imageUrl, price, onPlus, onFavorite }) {
   const [isAdded, setIsAdded] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
 
   const onClickPlus = () => {
-    onPlus({title, price, imageUrl});
+    onPlus({ title, price, imageUrl });
     setIsAdded(!isAdded);
-  }
+  };
 
   const onClickFavorite = () => {
-    setIsFavorite(!isFavorite)
-  }
+    onFavorite({ title, imageUrl, price });
+    setIsFavorite(!isFavorite);
+  };
 
   return (
     <div className="card">
@@ -33,7 +33,6 @@ function Card({ title, imageUrl, price, onPlus }) {
         />
         <div className="favorite" onClick={onClickFavorite}>
           <img
-
             src={isFavorite ? "/images/like.png" : "/images/unliked.png"}
             alt="Add to favorite"
           />

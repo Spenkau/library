@@ -1,57 +1,57 @@
 .card {
-    background-color: #ffffff;
-    padding: 20px;
-    margin-bottom: 20px;
-    width: 220px;
-    border-radius: 40px;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 220px;
+  border-radius: 40px;
+  border: 1px solid #e9e9e9;
+  margin-right: 28px;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2 ease-in-out;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+  }
+
+  .favorite {
+    position: relative;
+    cursor: pointer;
+  }
+
+  span {
+    font-size: 13px;
+    opacity: 0.5;
+    text-transform: uppercase;
+  }
+
+  b {
+    font-size: 13px;
+  }
+
+  h5 {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .cardAdd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 70px;
+    .cardPrice {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  .button {
+    background: #ffffff;
     border: 1px solid #e9e9e9;
-    margin-right: 28px;
-    transition: box-shadow 0.2s ease-in-out, transform 0.2 ease-in-out;
-    overflow: hidden;
- 
-    &:hover {
-        box-shadow: 0px 14px 30px rgba(0,0,0,0.08);
-        transform: translateY(-5px);
-    }
-
-    .favorite {
-        position:relative;
-        cursor: pointer;
-    }
-
-   span {
-       font-size: 13px;
-       opacity: 0.5;
-       text-transform: uppercase;
-   }
-
-   b {
-       font-size: 13px;
-   }
-
-    h5 {
-        font-weight: 400;
-        font-size: 14px;
-    }
-
-    .cardAdd {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-right: 70px;
-        .cardPrice {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-    }
-    .button {
-        background: #ffffff;
-        border: 1px solid #e9e9e9;
-        box-sizing: border-box;
-        border-radius: 8px;
-        height: 32px;
-        width: 32px; 
-        cursor: pointer;
-    }
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+  }
 }
