@@ -1,1 +1,1 @@
-https://github.com/Spenkau/library/tree/master/public/index.html
+https://github.com/Spenkau/library/public/index.html
